@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Artista{% endblock %}
+
+
+{% block body %}
+    <div class="header_container">
+        <div class="container_info_artist">
+            <img class="image_artist" src="{{ img }}" alt="artist"/>
+            <div class="container_info_artist_text">
+                <h1>{{ name }}</h1>
+                <spam>Seguidores: {{ followers }}</spam>
+                <br>
+                <br>
+                <spam>Generos:</spam>
+                <ul>
+                    {% for genre in genres %}
+                        <li> {{ genre }}</li>
+                    {% endfor %}
+                </ul>
+            </diV>
+        </div>
+    </div>   
+
+     <div id="tracks_container">
+         <table id="table_tracks">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Album</th>
+                    <th>Canción</th>
+                    <th>Artista(s)</th>
+                    <th>◷</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, value in tracks %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td><img src="{{ value.imgAlbum }}" alt="album"/></td>
+                        <td>{{ value.song }}</td>
+                        <td>
+                        {% for nameArtist in value.artists %}
+                            {{ nameArtist }}
+                        {% endfor %}
+                        </td>
+                        <td><a target="_blanck" href="{{ value.url }}">{{ value.duration }}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+     </div>     
+{% endblock %}

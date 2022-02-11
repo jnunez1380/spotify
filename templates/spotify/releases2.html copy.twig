@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Lanzamientos{% endblock %}
+
+
+{% block body %}
+    <div id="header_container">
+        <table>
+            <tr>
+                <td rowspan="3"><img src="{{ imagenAlbum }}" alt="lanzamiento"/></td>
+                <td><h2>{{ type }}</h2></td>
+            </tr>
+            <tr>
+                <td><h1 style="padding: 0.04em 0px;visibility: visible;width: 100%;font-size: 96px;line-height: 96px;">{{ nameAlbum }}</h1></td>
+            </tr>
+            <tr>
+                <td><spam>{{ artist }} • {{ year }} • {{ totalTracks }} Caciones</spam></td>
+            </tr>
+        </table>
+    </div>
+    <div id="tracks_container">
+        <a id="play" target="_blank" href="{{ spotify }}">▶</a>
+
+        <table id="table_tracks">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>TÍTULO</th>
+                    <th>◷</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, value in tracks %}
+                    <tr>
+                        <td id="col" class="hidden-xs">{{ value.track_number }}</td>
+                        <td>
+                            {{ value.name }}
+                            <br>
+                            {% for type, items in value.artists %}
+                                <a id="artists_list" href="{{ path('artist', {'url':items.href}) }}">{{ items.name }}</a>
+                            {% endfor %}
+                        </td>
+                        {% set seconds = (value.duration_ms / 1000) % 60 %}
+                        {% set minutes = ((value.duration_ms / (1000*60)) % 60) %}
+                        <td> {{ minutes ~ ":" ~ seconds }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <spam style="text-aling=center">{{ copyrights }}</spam>
+    </div>
+    
+    
+
+    
+{% endblock %}

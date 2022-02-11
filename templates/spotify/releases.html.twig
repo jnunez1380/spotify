@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Lanzamientos{% endblock %}
+
+
+{% block body %}
+    <div id="tracks_container">
+        {% for key, album in albums %}
+                    <div class="banner">
+                        <img src="{{ album.img }}" />
+                        <h4>{{album.name}}</h4>
+                        <spam> <a id="artists_list" href="{{ path('artist', {'url':album.artists.url}) }}">{{ album.artists.name }}</a> </spam>
+                    </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+.header_container {
+    background-color: rgb(8, 48, 64);
+    padding: 35px;
+    text-align: center
+}
+
+.container_info_artist {
+    background-color: #b4ecb3;
+    color: #141452;
+    padding: 20px;
+}
+
+.image_artist {
+    display: inline-block;
+    margin: 10px;
+}
+
+.container_info_artist_text {
+    display: inline-block;
+    margin: 10px;
+    margin-top: -50px;
+    font-size: 1.4em;
+}
+
+.container_info_artist_text ul li{
+    text-align: left;
+}
+
+#tracks_container {
+    background-color: rgb(9, 20, 24);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#table_tracks{
+    font-size: 25px;
+    width: 97%;
+    margin: 20px 40px;
+}
+
+#table_tracks thead{
+    text-align: center;
+}
+
+
+#table_tracks tbody{
+    text-align: left;
+}
+
+#artists_list {
+    font-size: 20px;
+    color: white;
+    background-color: #3970c4;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+.banner{
+    padding: 20px;
+    background-color: white;
+    margin: 10px;
+    text-align: center;
+    color: black;
+    width: 350px;
+    display: inline-block;
+}
