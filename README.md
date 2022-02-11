@@ -1,12 +1,8 @@
 # spotify
-<<<<<<< HEAD
-Consumo del API de spotify en un proyecto base de symfony
-=======
-Consuming the spotify API in a symfony base project.
+Integracion del api de spotify con Symfony PHP
 
-Previously have an apache server running.
-Clone the repository.
-Install all dependencies with 'Composer install'.
+1. Clonar el repositorio en un servidor apache.
+2. Ejecutar 'Composer Install', para instalar paquetes y demas librerias requeridas.
+3. Levantar el servidor de Symfony con 'Symfony server:start'.
 
-at the beginning it performs an authentication with the spotify api.
->>>>>>> master
+El index realiza la autenticacion con Spotify por lo cual debe tener ya una sesion activa.
